@@ -15,6 +15,9 @@ public:
   void pushButton(PlayerButton p0) {
     PlayerObject::pushButton(p0);
 
+    if (this->getID().starts_with("TheSillyDoggo.Cheats")) // fix qolmod show trajectory spamming the click sound
+        return;
+
   if (Mod::get()->getSettingValue<bool>("only-on-jump")) {
       if (p0 != PlayerButton::Jump) {
         return;
